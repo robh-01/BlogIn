@@ -1,39 +1,54 @@
 import "tailwindcss";
 import styles from "./signup.module.css";
+import Link from "next/link";
 
 export default function Signup() {
-  const inputStyle = " border";
+  const inputStyle = " bg-[#ABA6A630] rounded-sm px-[0.5rem] py-[0.3rem] w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent mt-[0.1rem]";
 
   return <div className={styles["signup-page"] + " flex items-center justify-center"}>
-    <form action="" className="signup-form-container bg-white ">
-      <legend>Signup | Create a new account</legend>
-      <div className="flex ">
+    <form action="" className="signup-form-container bg-white p-[3rem] flex flex-col gap-[1rem] rounded-md shadow-lg">
+      <legend className="mb-[0.5rem] font-medium text-2xl">Signup | Create a new account</legend>
+      <div className="flex gap-[0.5rem]">
         <span>
           <label htmlFor="first-name">First name</label>
           <br />
-          <input type="text" name="firstname" id="first-name" className={inputStyle + " "} />
+          <input type="text" name="firstname" id="first-name" placeholder="First name" className={inputStyle + " "} />
         </span>
         <span>
           <label htmlFor="last-name">Last name</label>
           <br />
-          <input type="text" name="lastname" id="last-name" className={inputStyle + " "} />
+          <input type="text" name="lastname" id="last-name" placeholder="Last name" className={inputStyle + " "} />
         </span>
       </div>
-      <label htmlFor="username">New username</label>
-      <input type="text" name="username" id="username" className={inputStyle + " "} />
-      <br />
-      <label htmlFor="email">Email</label>
-      <input type="email" name="email" id="email" className={inputStyle + " "} />
-      <br />
-      <label htmlFor="password">Create password</label>
-      <input type="password" name="password" id="password" className={inputStyle + " "} />
+      <div>
+        <label htmlFor="username">New username</label>
+        <br />
+        <input type="text" name="username" id="username" placeholder="Username" className={inputStyle + " "} />
+      </div>
+      <div>
+        <label htmlFor="email">Email</label>
+        <br />
+        <input type="email" name="email" id="email" placeholder="eg: johndoe@gmail.com" className={inputStyle + " "} />
+      </div>
+      <div>
+        <label htmlFor="password">Create password</label>
+        <br />
+        <input type="password" name="password" id="password" placeholder="Create a new password" className={inputStyle + " "} />
+      </div>
       {
         // confirm-password field is not sent to the server
         // it is just for client validation
       }
-      <label htmlFor="confirm-password">Confirm password</label>
-      <input type="password" name="confirm-password" id="confirm-password" className={inputStyle + " "} />
-      <button type="submit" className="bg-blue-500 text-white px-[1rem]">Create account</button>
+      <div>
+        <label htmlFor="confirm-password">Confirm password</label>
+        <br />
+        <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm password" className={inputStyle + " "} />
+      </div>
+      <button type="submit" className="mt-[0.5rem] bg-blue-500 text-white py-[0.5rem] rounded-xl hover:bg-blue-800">Create account</button>
+    <div className="text-center">
+      <span className="text-gray-500">Already have an account? </span>
+      <Link href="/login" className="text-blue-500 hover:text-blue-800">Login</Link>
+    </div>
     </form>
   </div>
 }
