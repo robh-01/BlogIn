@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Oswald, Freeman } from "next/font/google";
+import { Oswald } from "next/font/google";
 
 const oswald = Oswald({
   subsets: ["latin"]

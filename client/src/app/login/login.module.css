@@ -5,3 +5,11 @@
   background-position: center;
   height: 100vh;
 }
+
+/* did not followed mobile-first approach of tailwind, so had to find way around it */
+@media (width <=48rem) {
+  .login-form-container {
+    width: 90%;
+    padding-inline: 1.8rem;
+  }
+}

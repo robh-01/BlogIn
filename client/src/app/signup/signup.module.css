@@ -5,3 +5,12 @@
   background-position: center;
   height: 100vh;
 }
+
+
+/* did not followed mobile-first approach of tailwind, so had to find way around it */
+@media (width <=48rem) {
+  .signup-form-container {
+    width: 90%;
+    padding-inline: 1.8rem;
+  }
+}
