@@ -47,6 +47,6 @@ export async function loginAction(_currentState: unknown, formData: FormData) {
   const data = await loginResponse.json();
   return {
     success: true,
-    jwt_token: data.jwt
+    authentication_token: data.jwt
   };
 }

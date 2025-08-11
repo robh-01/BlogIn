@@ -32,11 +32,11 @@ export default function Signup() {
         const newIdentifier = state?.formData?.identifier as string ?? "";
         setIdentifier(prev => (prev !== newIdentifier ? newIdentifier : prev));
       } else {
-        console.log(state);
+        localStorage.setItem("authentication_token", state.authentication_token);
         router.push("/blogs");
       }
     }
-  }, [state]);
+  }, [state, router]);
 
   return <div className={styles["login-page"] + " flex items-center justify-center"}>
     <form action={formAction} className={styles["login-form-container"] + " bg-white p-[3rem] flex flex-col gap-[1rem] rounded-md shadow-lg"}>
