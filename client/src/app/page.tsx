@@ -1,9 +1,22 @@
-import Image from "next/image"
+"use client";
+import { verifyUser } from "@/lib/auth";
+import { redirect } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
-  return <>
-    <div>
-      homepage
-    </div>
-  </>
-} 
+
+  useEffect(() => {
+    (async () => {
+
+      const user = await verifyUser();
+
+      if (user) {
+        redirect("/blogs");
+      } else {
+        redirect("/login");
+      }
+    })();
+  }, []);
+
+  return null;
+}

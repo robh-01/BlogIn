@@ -40,8 +40,7 @@ export default function Signup() {
 
   return <div className={styles["login-page"] + " flex items-center justify-center"}>
     <form action={formAction} className={styles["login-form-container"] + " bg-white p-[3rem] flex flex-col gap-[1rem] rounded-md shadow-lg"}>
-      <div className="flex items-center justify-center gap-[0.5rem]">
-        <Image src="/images/logo.png" alt="Logo" width={60} height={60} className="" />
+      <div className="flex items-center justify-center gap-[0.5rem]"> <Image src="/images/logo.png" alt="Logo" width={60} height={60} className="" />
         <p className={dancing_script.className + " text-5xl font-black"}>BlogIn</p>
       </div>
       <legend className="mb-[0.5rem] font-medium text-2xl self-center">Login into your account</legend>
