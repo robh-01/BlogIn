@@ -54,6 +54,8 @@ export default function BlogsPage() {
           >
             github.
           </a>
+          <br />
+          <b>Disclaimer: Blogs here are gpt generated.</b>
         </div>
         <hr className="w-3xs" />
       </div>

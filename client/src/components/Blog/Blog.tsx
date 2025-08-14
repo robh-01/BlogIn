@@ -10,10 +10,10 @@ export function Blog({ blog, }: {
 
   if (!Array.isArray(blogContent)) {
     return (
-      <div className="blog-container mt-8 flex flex-col gap-4 items-center w-full max-w-4xl mx-auto px-2">
-        <p>{new Date(blogContent.publishedAt).toLocaleDateString()}</p>
-        <p>{blogContent.Title}</p>
-        <div className="blog-content" dangerouslySetInnerHTML={{__html: blogContent.Content}}></div>
+      <div className="blog-container mt-8 flex flex-col gap-3 items-center w-full max-w-4xl mx-auto px-4">
+        <p className="text-gray-400">{new Date(blogContent.publishedAt).toLocaleDateString()}</p>
+        <p className="text-3xl text-center">{blogContent.Title}</p>
+        <div className="blog-content text-lg md:text-2xl mt-5" dangerouslySetInnerHTML={{__html: blogContent.Content}}></div>
       </div>
     );
   }
